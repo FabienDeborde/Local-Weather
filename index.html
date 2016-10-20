@@ -11,10 +11,12 @@
 <body>
   <div class="container">
     <h1>Your local weather @ <span class="town">home</span></h1>
-    <div class="msg"></div>
-    <div class="location">Location: <span class="town"></span><br/><span id="country"></span></div>
-    <div class="weather">Weather: <span id="weather"></span><span id="icon"></span></div>
-    <div class="temperature">Temperature: <span id="temp"></span><a id="convert" href="">To Celcius</a></div>
+    <div class="msg">
+      <div id="customMsg"></div>
+    </div>
+    <div class="location category">Location: <span class="town"></span><span id="country"></span></div>
+    <div class="weather category">Weather: <span id="weather"></span><span id="icon"></span><br/><span id="description"></span></div>
+    <div class="temperature category">Temperature: <span id="temperature"></span><a id="convert" href="">To Celsius</a></div>
   </div>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <script src="assets/js/vendor/modernizr-custom.js"></script>

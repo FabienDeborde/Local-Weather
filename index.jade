@@ -13,19 +13,21 @@ body
       span.town home
 
     .msg
+      #customMsg
 
-    .location Location: 
+    .location.category Location: 
       span.town
-      br
       span#country
     
-    .weather Weather: 
+    .weather.category Weather: 
      span#weather
      span#icon
+     br
+     span#description
     
-    .temperature Temperature: 
-      span#temp
-      a#convert(href="") To Celcius
+    .temperature.category Temperature: 
+      span#temperature
+      a#convert(href="") To Celsius
   
   
   
