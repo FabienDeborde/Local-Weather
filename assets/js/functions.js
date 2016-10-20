@@ -50,7 +50,6 @@ $(document).ready(function() {
             msgEl.text(''); // Delete the loading message
           },
           success: function(data){
-            console.log(data);
             // Update content
             town.text(data.name);
             country.text(', ' + data.sys.country);
