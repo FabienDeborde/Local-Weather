@@ -238,11 +238,21 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  filter: blur(0px);
   z-index: -1;
   position: fixed;
   right: 0;
   left: 0;
+}
+
+.container:before {
+  content: '';
+  display: block;
+  position: fixed;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 100vh;
+  width: auto;
 }
 
 .phoneContainer {
