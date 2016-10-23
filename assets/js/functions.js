@@ -13,22 +13,41 @@ $(document).ready(function() {
     var description = $('#description');
     var temperature = $('#temperature');
 
-   // Get location of the user
-    // Check if the user has geolocation enabled
-    if (Modernizr.geolocation) {
-      msgEl.text('Checking your location...');
-      navigator.geolocation.getCurrentPosition(success, fail);
-    } else {
-      msgEl.html("<span class=\"error\">Couldn't find your location, make sure to accept the request to locate you.</span>");
-    }
+  // Get location of the user
+
+    // Store the geodata into variables
+      var longitude = '';
+      var latitude = '';
+      var townName = '';
+      var countryName = '';
+    // Make the AJAX call
+      $.ajax({
+        type: "GET",
+        url: "http://ip-api.com/json",
+        timeout: 2000
+      ,
+      beforeSend: function(){
+        msgEl.text('Checking your location...');
+      },
+      success: function(data){
+        longitude = data.lon;
+        latitude = data.lat;
+        townName = data.city;
+        countryName = data.country;
+        weatherQuery(longitude, latitude, townName, countryName);
+      },
+      error: function(data){
+        msgEl.html("<span class=\"error\">Couldn't find your location, make sure to accept the request to locate you.</span>");
+        // More precise message for debug purpose
+        console.log(msg);
+        console.log('error code: ' + msg.code + ' / error message: ' + msg.message);
+      }
+      });
+
 
     // If geolocation is enabled & geodata retrieved
-    function success(position){
+    function weatherQuery(longitude, latitude, townName, countryName){
       msgEl.fadeOut(500);
-
-      // Store the geodata into variables
-      var longitude = position.coords.longitude;
-      var latitude = position.coords.latitude;
 
       // Make the API call
 
@@ -51,11 +70,12 @@ $(document).ready(function() {
           },
           success: function(data){
             // Update content
-            town.text(data.name);
-            country.text(', ' + data.sys.country);
+            town.text(townName);
+            country.text(', ' + countryName);
             weather.text(data.weather[0].main);
             icon.html('<img src="http://openweathermap.org/img/w/' + data.weather[0].icon + '.png" alt="' + data.weather[0].main + ' icon"</img>');
             description.text(data.weather[0].description);
+            $('.temperature').css('display', 'block');
 
               // Insert the right unit symbol after the temperature
             if (unit === 'metric') {
@@ -79,7 +99,7 @@ $(document).ready(function() {
             switch (data.weather[0].icon) {
               case '01d':
               case '01n':
-                imgUrl = '/Local-Weather/assets/img/sunny.jpg';
+                imgUrl = 'https://fabiendeborde.github.io/Local-Weather/assets/img/sunny.jpg';
                 break;
               case '02d':
               case '02n':
@@ -87,28 +107,28 @@ $(document).ready(function() {
               case '03n':
               case '04d':
               case '04n':
-                imgUrl = '/Local-Weather/assets/img/cloudy.jpg';
+                imgUrl = 'https://fabiendeborde.github.io/Local-Weather/assets/img/cloudy.jpg';
                 break;
               case '09d':
               case '09n':
               case '10d':
               case '10n':
-                imgUrl = '/Local-Weather/assets/img/rainy.jpg';
+                imgUrl = 'https://fabiendeborde.github.io/Local-Weather/assets/img/rainy.jpg';
                 break;
               case '11d':
               case '11n':
-                imgUrl = '/Local-Weather/assets/img/storm.jpg';
+                imgUrl = 'https://fabiendeborde.github.io/Local-Weather/assets/img/storm.jpg';
                 break;
               case '13d':
               case '13n':
-                imgUrl = '/Local-Weather/assets/img/snow.jpg';
+                imgUrl = 'https://fabiendeborde.github.io/Local-Weather/assets/img/snow.jpg';
                 break;
               case '50d':
               case '50n':
-                imgUrl = '/Local-Weather/assets/img/mist.jpg';
+                imgUrl = 'https://fabiendeborde.github.io/Local-Weather/assets/img/mist.jpg';
                 break;
               default:
-                imgUrl = '/Local-Weather/assets/img/weather.jpeg';
+                imgUrl = 'https://fabiendeborde.github.io/Local-Weather/assets/img/weather.jpeg';
             }
             $('.container').css('background-image', 'url(' + imgUrl + ')');
           },
@@ -132,16 +152,7 @@ $(document).ready(function() {
         }
       })
 
-    }  // end of success()
-
-    // If geolocation is enabled & geodata failed
-    function fail(msg){
-      msgEl.html("<span class=\"error\">Couldn't find your location, make sure to accept the request to locate you.</span>");
-      // More precise message for debug purpose
-      console.log(msg);
-      console.log('error code: ' + msg.code + ' / error message: ' + msg.message);
-    }
-
+    }  // end of weatherQuery()
 
   }  // end of geoWeather()
 

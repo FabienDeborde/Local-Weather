@@ -251,7 +251,7 @@ body {
   position: fixed;
   right: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.2);
   height: 100vh;
   width: auto;
 }
@@ -260,7 +260,7 @@ body {
   width: 515px;
   height: 710px;
   z-index: 99;
-  background: url("/Local-Weather/assets/img/portable.png") no-repeat;
+  background: url("https://fabiendeborde.github.io/Local-Weather/assets/img/portable.png") no-repeat;
   position: fixed;
   bottom: 0;
   left: 15%;
@@ -332,13 +332,17 @@ body {
   font-style: italic;
 }
 
-.phoneContainer .contentContainer #temperature {
+.phoneContainer .contentContainer .temperature {
+  display: none;
+}
+
+.phoneContainer .contentContainer .temperature #temperature {
   font-size: 1.6em;
   margin-top: 20px;
   letter-spacing: 1.1px;
 }
 
-.phoneContainer .contentContainer a#convert {
+.phoneContainer .contentContainer .temperature a#convert {
   display: block;
   width: 200px;
   height: 60px;
@@ -354,7 +358,7 @@ body {
   margin: 30px auto 0 auto;
 }
 
-.phoneContainer .contentContainer a#convert:hover {
+.phoneContainer .contentContainer .temperature a#convert:hover {
   background-color: #2c3e50;
   color: white;
   border: 1px solid white;

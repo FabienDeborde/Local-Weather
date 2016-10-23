@@ -16,7 +16,7 @@
     position: fixed
     right: 0
     left: 0
-    background-color: rgba(0,0,0,0.1)
+    background-color: rgba(0,0,0,0.2)
     height: 100vh
     width: auto
 
@@ -24,7 +24,7 @@
   width: 515px
   height: 710px
   z-index: 99
-  background: url('/Local-Weather/assets/img/portable.png') no-repeat
+  background: url('https://fabiendeborde.github.io/Local-Weather/assets/img/portable.png') no-repeat
   position: fixed
   bottom: 0
   left: 15%
@@ -79,29 +79,31 @@
         letter-spacing: 1.1px
         font-style: italic
 
-    #temperature
-      font-size: 1.6em
-      margin-top: 20px
-      letter-spacing: 1.1px
+    .temperature
+      display: none
+      #temperature
+        font-size: 1.6em
+        margin-top: 20px
+        letter-spacing: 1.1px
 
-    a#convert
-      display: block
-      width: 200px
-      height: 60px
-      padding: 10px 10px
-      background-color: $white
-      color: $darkBlue
-      text-align: center
-      font-size: 1.6em
-      font-weight: bold
-      line-height: 60px
-      border-radius: 5px
-      text-decoration: none
-      margin: 30px auto 0 auto
-      &:hover
-        background-color: $darkBlue
-        color: $white
-        border: 1px solid $white
+      a#convert
+        display: block
+        width: 200px
+        height: 60px
+        padding: 10px 10px
+        background-color: $white
+        color: $darkBlue
+        text-align: center
+        font-size: 1.6em
+        font-weight: bold
+        line-height: 60px
+        border-radius: 5px
+        text-decoration: none
+        margin: 30px auto 0 auto
+        &:hover
+          background-color: $darkBlue
+          color: $white
+          border: 1px solid $white
 
 @media (max-width: 768px)
   .phoneContainer
