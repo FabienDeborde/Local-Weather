@@ -87,7 +87,7 @@ $(document).ready(function() {
               case '03n':
               case '04d':
               case '04n':
-                imgUrl = '../assets/img/cloudy.jpg';
+                imgUrl = '/assets/img/cloudy.jpg';
                 break;
               case '09d':
               case '09n':
