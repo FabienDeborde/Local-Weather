@@ -8,4 +8,6 @@ Add a button to convert from Celsius to Fahrenheit (by passing it to the ajax ca
 
 (You might get an error on github pages because of https security layer).
 
-You can check the app working on [GitHub](https://fabiendeborde.github.io/Local-Weather/) or on [CodePen] (http://codepen.io/fabien_d/full/GjzoXv/)
+(I had to make multiples branches because of the way GitHub and CodePen manage assets paths. I also had to make some modifications to get the geolocation data on CodePen because Chrome deprecated the geolocation method over http and I couldn't use the weather API with https so I was getting errors. I used instead http://ip-api.com/json to retrieve the geodata, but the data are a bit less precise.)
+
+You can check the app working on [GitHub](https://fabiendeborde.github.io/Local-Weather/) or on [CodePen] (http://codepen.io/fabien_d/full/vXbKYv/)
