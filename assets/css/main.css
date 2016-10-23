@@ -249,7 +249,7 @@ body {
   width: 515px;
   height: 710px;
   z-index: 99;
-  background: url("Local-Weather/assets/img/portable.png") no-repeat;
+  background: url("/Local-Weather/assets/img/portable.png") no-repeat;
   position: fixed;
   bottom: 0;
   left: 15%;
