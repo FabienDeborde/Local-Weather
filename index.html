@@ -4,23 +4,29 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <!--link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous")-->
   <link rel="stylesheet" href="assets/css/main.css"/>
-  <title>My local weather app</title>
+  <title>Local Weather App</title>
 </head>
 <body>
-  <div class="container">
-    <h1>Your local weather @ <span class="town">home</span></h1>
-    <div class="msg">
-      <div id="customMsg"></div>
+  <div class="container"></div>
+  <div class="phoneContainer">
+    <div class="contentContainer">
+      <div id="time">00:00</div>
+      <div class="msg">
+        <div id="customMsg"></div>
+      </div>
+      <div class="location category"> <span class="town">Nagoya,</span><span id="country"> Japan</span></div>
+      <div class="weather category"> 
+        <div id="icon"></div>
+        <div id="weather"></div>
+        <div id="description"></div>
+      </div>
+      <div class="temperature category"> 
+        <div id="temperature"></div><a id="convert" href="">To Celsius</a>
+      </div>
     </div>
-    <div class="location category">Location: <span class="town"></span><span id="country"></span></div>
-    <div class="weather category">Weather: <span id="weather"></span><span id="icon"></span><br/><span id="description"></span></div>
-    <div class="temperature category">Temperature: <span id="temperature"></span><a id="convert" href="">To Celsius</a></div>
   </div>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <script src="assets/js/vendor/modernizr-custom.js"></script>
-  <!--script(src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous")-->
-  <!--script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous")-->
   <script src="assets/js/functions.js"></script>
 </body>

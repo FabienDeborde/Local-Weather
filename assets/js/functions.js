@@ -65,11 +65,56 @@ $(document).ready(function() {
             } else {
               temperature.text(data.main.temp + 'K');
             }
+              // Display time
+              var dt = new Date();
+              var minutes = dt.getMinutes();
+              if (minutes < 10){
+                minutes = '0' + minutes;
+              }
+              var time = dt.getHours() + ':' + minutes;
+              $('#time').text(time);
+
+              // Change background image depending of the weather
+            var imgUrl = '';
+            switch (data.weather[0].icon) {
+              case '01d':
+              case '01n':
+                imgUrl = '/assets/img/sunny.jpg';
+                break;
+              case '02d':
+              case '02n':
+              case '03d':
+              case '03n':
+              case '04d':
+              case '04n':
+                imgUrl = '/assets/img/cloudy.jpg';
+                break;
+              case '09d':
+              case '09n':
+              case '10d':
+              case '10n':
+                imgUrl = '/assets/img/rainy.jpg';
+                break;
+              case '11d':
+              case '11n':
+                imgUrl = '/assets/img/storm.jpg';
+                break;
+              case '13d':
+              case '13n':
+                imgUrl = '/assets/img/snow.jpg';
+                break;
+              case '50d':
+              case '50n':
+                imgUrl = '/assets/img/mist.jpg';
+                break;
+              default:
+                imgUrl = '/assets/img/weather.jpeg';
+            }
+            $('.container').css('background-image', 'url(' + imgUrl + ')');
           },
           error: function(data){
             msgEl.html("<span class=\"error\">An error occured while retrieving data. Please try again later.</span>"); // Display an error message if the ajax request failed
           }
-
         });  // end of ajax()
 
       };  // end of ajaxReq()
@@ -96,6 +141,7 @@ $(document).ready(function() {
       console.log(msg);
       console.log('error code: ' + msg.code + ' / error message: ' + msg.message);
     }
+
 
   }  // end of geoWeather()
 
