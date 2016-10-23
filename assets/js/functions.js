@@ -79,7 +79,7 @@ $(document).ready(function() {
             switch (data.weather[0].icon) {
               case '01d':
               case '01n':
-                imgUrl = '/assets/img/sunny.jpg';
+                imgUrl = 'assets/img/sunny.jpg';
                 break;
               case '02d':
               case '02n':
@@ -87,28 +87,28 @@ $(document).ready(function() {
               case '03n':
               case '04d':
               case '04n':
-                imgUrl = '/assets/img/cloudy.jpg';
+                imgUrl = 'assets/img/cloudy.jpg';
                 break;
               case '09d':
               case '09n':
               case '10d':
               case '10n':
-                imgUrl = '/assets/img/rainy.jpg';
+                imgUrl = 'assets/img/rainy.jpg';
                 break;
               case '11d':
               case '11n':
-                imgUrl = '/assets/img/storm.jpg';
+                imgUrl = 'assets/img/storm.jpg';
                 break;
               case '13d':
               case '13n':
-                imgUrl = '/assets/img/snow.jpg';
+                imgUrl = 'assets/img/snow.jpg';
                 break;
               case '50d':
               case '50n':
-                imgUrl = '/assets/img/mist.jpg';
+                imgUrl = 'assets/img/mist.jpg';
                 break;
               default:
-                imgUrl = '/assets/img/weather.jpeg';
+                imgUrl = 'assets/img/weather.jpeg';
             }
             $('.container').css('background-image', 'url(' + imgUrl + ')');
           },
