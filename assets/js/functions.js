@@ -37,7 +37,7 @@ $(document).ready(function() {
       function ajaxReq(unit) {
         var unit = unit; // Get the unit of the request
         // Build the request url with custom longitude/latitude and units
-        var urlQuery = 'http://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&units=' + unit + '&appid=35187c9e07d9d7aa6b37ca9f15703bc5';
+        var urlQuery = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&units=' + unit + '&appid=35187c9e07d9d7aa6b37ca9f15703bc5';
 
         $.ajax({
           type: "GET",
